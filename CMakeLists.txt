@@ -4,7 +4,7 @@ project(roman2arabic VERSION 0.1
   DESCRIPTION "converter for roman to arabic numbers"
   LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -21,7 +21,7 @@ endif()
 
 add_library(roman2arabiclib STATIC src/roman2arabiclib.cpp include/roman2arabiclib/lib.hpp)
 target_include_directories(roman2arabiclib PUBLIC include)
-target_compile_features(roman2arabiclib PUBLIC cxx_std_17)
+target_compile_features(roman2arabiclib PUBLIC cxx_std_20)
 
 target_compile_options(roman2arabiclib PUBLIC -Wall -Wextra -Wpedantic -Werror)
 

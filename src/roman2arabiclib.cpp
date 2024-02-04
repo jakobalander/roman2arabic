@@ -1,5 +1,7 @@
 #include <cstdint>
+#include <format>
 #include <map>
+#include <stdexcept>
 #include <string>
 
 #include "roman2arabiclib/lib.hpp"
@@ -29,5 +31,9 @@ uint64_t Roman2Arabic::valueOf(const char c) {
     {'d', 500},
     {'m', 1000}
   };
-  return values.at(c); 
+  try {
+    return values.at(c);
+  } catch (std::out_of_range& e) {
+    throw std::runtime_error(std::format("unknown character: {}", c));
+  }
 }
