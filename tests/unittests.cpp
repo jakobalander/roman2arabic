@@ -18,6 +18,10 @@ TEST(basic, with_leading_and_trailing_subtraction) {
   EXPECT_EQ(Roman2Arabic::convert("cmliv"), 954);
 }
 
+TEST(basic, handle_capital_letters) {
+  EXPECT_EQ(Roman2Arabic::convert("MDCLXVI"), 1666);
+}
+
 TEST(random_values, from_wikipedia) {
   // various random numbers from wikipedia
   const std::map<std::string, uint64_t> oracle {

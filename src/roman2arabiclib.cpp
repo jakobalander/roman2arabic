@@ -1,3 +1,4 @@
+#include <cctype>
 #include <cstdint>
 #include <format>
 #include <map>
@@ -32,7 +33,7 @@ uint64_t Roman2Arabic::valueOf(const char c) {
     {'m', 1000}
   };
   try {
-    return values.at(c);
+    return values.at(tolower(c));
   } catch (std::out_of_range& e) {
     throw std::runtime_error(std::format("unknown character: {}", c));
   }
